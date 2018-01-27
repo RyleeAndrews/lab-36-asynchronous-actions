@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
     return(
       <div className="dashboard">
         <CatForm addCategory={this.props.todoCreate} cats={this.props.categories}/>
-        <CatList deleteHandler={this.props.todoDelete} cats={this.props.categories}/>
+        <CatList update={this.props.todoUpdate} deleteHandler={this.props.todoDelete} cats={this.props.categories}/>
       </div>
     );
   }

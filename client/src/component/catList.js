@@ -17,7 +17,14 @@ class CatList extends React.Component {
               {console.log('yooo', category._id)}
                 <h2> {category.task} </h2>
                 <h2> {category.description} </h2>
-                <CatItem deleteHandler={this.props.deleteHandler} catID={category._id}/>
+                <CatItem update={this.props.update}
+                categoryID={category.categoryID}
+                deleteHandler={this.props.deleteHandler}
+                cats={this.props.cats} catID={category._id}
+                task={category.task}
+                description={category.description}
+                categoryID={category.categoryID}
+                />
               </li>
             )
           }
