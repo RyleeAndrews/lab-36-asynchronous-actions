@@ -13,11 +13,11 @@ class CatList extends React.Component {
         <ul>
           {
             this.props.cats.map((category,i) =>
-              <li key={category.id} category={category}>
-              {console.log('yooo', category.task, category.description)}
+              <li key={category._id} category={category}>
+              {console.log('yooo', category._id)}
                 <h2> {category.task} </h2>
                 <h2> {category.description} </h2>
-                <CatItem delete={this.props.delete} catID={category.categoryID}/>
+                <CatItem deleteHandler={this.props.deleteHandler} catID={category._id}/>
               </li>
             )
           }

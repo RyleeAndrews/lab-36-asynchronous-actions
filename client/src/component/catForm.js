@@ -33,7 +33,7 @@ class CatForm extends React.Component {
   }
 
   render(){
-    console.log('cats', this.props.cats._id);
+    console.log('cats', this.state.categoryID);
     return(
       <div>
         <form onSubmit={this.onSubmit}>

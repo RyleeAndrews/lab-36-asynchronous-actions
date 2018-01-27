@@ -10,13 +10,14 @@ export default (state=initialState, action) => {
     return payload || initialState;
 
   case 'CREATE':
+    console.log('payload', payload);
     return [...state, payload];
 
   case 'UPDATE':
     return state.map(todo => todo._id === payload._id ? payload : todo);
 
   case 'DELETE':
-    return state.filter(todo => todo._id !== payload._id);
+    return state.filter(todo => todo._id !== payload);
 
   case 'RESET':
     return initialState;

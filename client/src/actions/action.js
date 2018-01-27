@@ -10,7 +10,6 @@ export const todoInitialize = () => dispatch => {
 };
 
 export const todoCreate = payload => dispatch => {
-
   superagent.post(API)
     .send(payload)
     .then(res => dispatch(createAction(res.body)) )
@@ -33,9 +32,13 @@ export const todoDelete = payload => dispatch => {
 
   superagent.delete(URL)
     .send(payload)
-    .then(res => dispatch(deleteAction(res.body)))
+    .then(res => {
+      console.log('!!!!', payload)
+      dispatch(deleteAction(payload));
+    })
     .catch(console.error);
 };
+
 
 
 const initAction = list => ({
@@ -44,7 +47,7 @@ const initAction = list => ({
 });
 
 const createAction = category => {
-  category.id = uuid();
+
   return {
     type: 'CREATE',
     payload: category,

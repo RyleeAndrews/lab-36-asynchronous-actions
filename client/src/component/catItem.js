@@ -17,7 +17,7 @@ class CatItem extends React.Component {
   render(){
     return(
       <div>
-        <button onClick={() => this.props.delete(this.props.catID)} type="submit"> delete </button>
+        <button onClick={() => this.props.deleteHandler(this.props.catID)} type="submit"> delete </button>
       </div>
     );
   }
